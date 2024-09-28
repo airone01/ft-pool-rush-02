@@ -6,7 +6,7 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 11:20:27 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/09/28 16:09:31 by prigaudi         ###   ########.fr       */
+/*   Updated: 2024/09/28 16:16:29 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,23 +64,24 @@ char	**ft_split(char *str, char *charset)
 	result = malloc(sizeof(char *) * nbr + 1);
 	if (result == NULL)
 		return (result);
-	i = -1;
-	while (str[++i])
+	i = 0;
+	while (str[i])
 	{
-		if (str[i] >= 32 && str[i] < 127)
+		if (str[i] >= 32 && str[i] < 127 && str[i] != charset[0])
 		{
 			limit[0] = i;
-			while (str[i] >= 32 && str[i] < 127)
+			while (str[i] >= 32 && str[i] < 127 && str[i] != charset[0])
 			{
 				if (str[i + 1] == charset[0] || str[i + 1] == '\0')
 				{
-					limit[1] = i;
+					limit[1] = i - 1;
 					save_word(result, str, limit, c);
 					c++;
 				}
 				i++;
 			}
 		}
+		i++;
 	}
 	result[c] = NULL; 
 	return (result);

@@ -6,7 +6,7 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 10:53:57 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/09/28 15:38:42 by prigaudi         ###   ########.fr       */
+/*   Updated: 2024/09/28 16:19:56 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(void)
 	while (dico1[i])
 	{	
 		dico2[i] = ft_split(dico1[i],":");
-		printf("0: '%s', 1: '%s'\n", dico2[i][0], dico2[i][1]);
+		printf("Key: '%s', Value: '%s'\n", dico2[i][0], dico2[i][1]);
 		i++;
 	}
 }
