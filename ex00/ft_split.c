@@ -6,23 +6,23 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 11:20:27 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/09/28 14:58:15 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/28 16:16:29 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush.h"
 
-char	*save_word(char **tab, char *str, int *end, int c)
+char	*save_word(char **tab, char *str, int *limit, int c)
 {
 	int	i;
 
-	tab[c] = malloc(sizeof(char) * (end[1] - end[0] + 2));
+	tab[c] = malloc(sizeof(char) * (limit[1] - limit[0] + 2));
 	if (tab[c] == NULL)
 		return (NULL);
 	i = 0;
-	while (i <= end[1] - end[0] + 1)
+	while (i <= limit[1] - limit[0] + 1)
 	{
-		tab[c][i] = str[end[0] + i];
+		tab[c][i] = str[limit[0] + i];
 		i++;
 	}
 	tab[c][i] = '\0';
@@ -38,27 +38,29 @@ char	**ft_split(char *str, char *charset)
 	char	**result;	
 
 	c = 0;
-	i = -1;
-	(void) charset;
-	nbr = count_words(str);
+	nbr = count_words(str, charset);
 	result = malloc(sizeof(char *) * nbr + 1);
 	if (result == NULL)
 		return (result);
-	while (str[++i])
+	i = 0;
+	while (str[i])
 	{
-		if (str[i] > 32 && str[i] < 127)
+		if (str[i] >= 32 && str[i] < 127 && str[i] != charset[0])
 		{
 			limit[0] = i;
-			while (str[++i] > 32 && str[i] < 127)
+			while (str[i] >= 32 && str[i] < 127 && str[i] != charset[0])
 			{
-				if (str[i + 1] == ' ' || str[i + 1] == '\0')
+				if (str[i + 1] == charset[0] || str[i + 1] == '\0')
 				{
-					limit[1] = i;
+					limit[1] = i - 1;
 					save_word(result, str, limit, c);
 					c++;
 				}
+				i++;
 			}
 		}
+		i++;
 	}
+	result[c] = NULL; 
 	return (result);
 }
