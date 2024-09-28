@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pow.c                                              :+:      :+:    :+:   */
+/*   split.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
+/*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/28 11:33:45 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/28 11:36:07 by elagouch         ###   ########.fr       */
+/*   Created: 2024/09/28 11:20:27 by prigaudi          #+#    #+#             */
+/*   Updated: 2024/09/28 14:08:21 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
- * Calculates `nb` to the power of `pow`.
- */
-int	ft_pow(int nb, int pow)
+#include "../rush.h"
+
+#include <stdio.h>
+
+int	main(int argc, char **argv)
 {
-	if (pow < 0)
-		return (0);
-	if (pow == 0)
-		return (1);
-	return (ft_pow(nb, pow - 1) * nb);
+	int		i;	
+	char	**test;
+
+	(void) argc;
+	test = ft_split(argv[1], argv[2]);
+	printf("%d", count_words(argv[1]));
+	i = 0;
+	while (i < 6)
+	{
+		printf("%s|", test[i]);
+		i++;
+	}
 }
