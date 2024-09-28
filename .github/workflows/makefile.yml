@@ -15,4 +15,4 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Build
-      run: make --makefile=ex00/MakeFile
+      run: make --makefile=ex00/Makefile
