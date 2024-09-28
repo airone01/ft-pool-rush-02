@@ -6,7 +6,7 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 17:11:51 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/28 18:06:08 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/28 18:11:58 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
  *
  * `x`: lines
  * `y`: the two strings (left and right) for each line
+ * 	(`to_find` being the left-side string and the
+ * 	"word" being the righ-side one)
  * `z`: (disregard) the chars for each string
  *
  * ```
