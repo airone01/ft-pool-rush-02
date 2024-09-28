@@ -6,7 +6,7 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 17:11:51 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/28 17:51:22 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/28 18:06:08 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,29 @@
 
 /*
  * Finds the word in the cube corresponding to the searched number.
+ * The cube being the following:
  *
+ * `x`: lines
+ * `y`: the two strings (left and right) for each line
+ * `z`: (disregard) the chars for each string
+ *
+ * ```
+ *     #===y===#   
+ *    /|      /| 
+ *   z x     z x
+ *  /  |    /  |
+ * #===y===#---#
+ * |  /    |  /
+ * x z     x z
+ * |/      |/
+ * #---y---#
+ * ```
+ *
+ * Args:
  * `u`:		"unit"		(times of `qty`)
  * `qty`:	"quantity"	(power of thousands)
  *
- * In:
+ * Algorithm:
  * ```c
  * to_find = u * pow(1000, qty);
  * ```
