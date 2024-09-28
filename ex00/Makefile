@@ -6,7 +6,7 @@
 #    By: elagouch <elagouch@42>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/28 10:51:47 by elagouch          #+#    #+#              #
-#    Updated: 2024/09/28 14:11:17 by elagouch         ###   ########.fr        #
+#    Updated: 2024/09/28 17:45:28 by elagouch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SRC = main.c		\
       ft_putstr.c	\
       ft_split.c	\
       ft_strcat.c	\
-      ft_strlen.c
+      ft_strlen.c	\
+      find_word.c
 OBJ = $(SRC:.c=.o)
 
 all: $(PROG)
