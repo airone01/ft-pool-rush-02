@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_charset.c                                       :+:      :+:    :+:   */
+/*   rush_count_words.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/29 16:14:17 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/09/29 16:14:25 by prigaudi         ###   ########.fr       */
+/*   Created: 2024/09/28 14:57:32 by prigaudi          #+#    #+#             */
+/*   Updated: 2024/09/29 23:12:42 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int check_charset(char *str, char *charset, int i)
+int	count_words(char *str)
 {
-    int j;
+	int	sum;
+	int	i;	
 
-    j = 0;
-    while (charset[j])
-    {
-        if (charset[j] != str[i + 1])
-            return (0);
-        i++;
-        j++;
-    }
-    return (1);
+	sum = 0;
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] > 32 && str[i] < 127)
+		{
+			if (str[i + 1] == ' ')
+				sum++;
+			if (str[i + 1] == '\0')
+				return (sum + 1);
+		}
+		i++;
+	}
+	return (sum);
 }
