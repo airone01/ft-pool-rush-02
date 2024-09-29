@@ -6,7 +6,7 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:24:53 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 22:31:58 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 22:34:43 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,12 +186,12 @@ int	main(int argc, char **argv)
 	if (argc > 2)
 	{
 		cube = extract_data(argv[1], &len);
-		args.nbr = ft_atoi(argv[2]);
+		args.nbr = argv[2];
 	}
 	else
 	{
 		cube = mk_cube(&len);
-		args.nbr = ft_atoi(argv[1]);
+		args.nbr = argv[1];
 	}
 	args.cube = cube;
 	args.len = len;
