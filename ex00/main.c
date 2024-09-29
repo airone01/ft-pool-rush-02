@@ -6,7 +6,7 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:24:53 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 13:43:02 by prigaudi         ###   ########.fr       */
+/*   Updated: 2024/09/29 17:05:25 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,17 +145,9 @@ void	del_cube(char ***cube, int len)
 	free(cube);
 }
 
-int	calc_qty(int	nbr)
+int	calc_qty(char *nbr)
 {
-	int	qty;	
-
-	qty = 0;
-	while (nbr / 1000  >= 1)
-	{
-		nbr = nbr / 1000;
-		qty++;
-	}
-	return (qty);
+	return ((ft_strlen(nbr) + 1) / 3);
 }
 
 int	main(int argc, char **argv)
@@ -173,7 +165,7 @@ int	main(int argc, char **argv)
 	cube = mk_cube(&len);
 	args.cube = cube;
 	args.len = len;
-	args.nbr = ft_atoi(argv[1]);
+	args.nbr = argv[1];
 	args.ite = 0;
 	args.qty = calc_qty(args.nbr);
 	putnbr_lang(args);
