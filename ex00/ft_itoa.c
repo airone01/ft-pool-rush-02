@@ -6,11 +6,11 @@
 /*   By: gaducurt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:41:30 by gaducurt          #+#    #+#             */
-/*   Updated: 2024/09/29 11:34:14 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 23:03:13 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush.h"
+#include "h_main.h"
 
 static int	count_size(int n)
 {
@@ -33,10 +33,10 @@ static int	count_size(int n)
  */
 char		*ft_itoa(int nb)
 {
-	int			count;
-	int			i;
-	char		*dest;
-	long int	n;
+	char	*dest;
+	int		count;
+	int		n;
+	int		i;
 
 	n = nb;
 	count = count_size(n);

@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   rush_check_charset.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
+/*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/28 11:10:24 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 22:54:49 by elagouch         ###   ########.fr       */
+/*   Created: 2024/09/29 16:14:17 by prigaudi          #+#    #+#             */
+/*   Updated: 2024/09/29 23:25:47 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "h_main.h"
-
 /*
- * Puts a string to stdout.
+ * Validates the charset.
  */
-void	ft_putstr(char *str)
+int	check_charset(char *str, char *charset, int i)
 {
-	write(1, str, ft_strlen(str));
+	int	j;
+
+	j = 0;
+    while (charset[j])
+    {
+        if (charset[j] != str[i + 1])
+            return (0);
+        i++;
+        j++;
+    }
+    return (1);
 }

@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_words.c                                      :+:      :+:    :+:   */
+/*   h_rush.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/28 14:57:32 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/09/28 14:57:50 by elagouch         ###   ########.fr       */
+/*   Created: 2024/09/29 23:20:38 by elagouch          #+#    #+#             */
+/*   Updated: 2024/09/29 23:24:14 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	count_words(char *str)
-{
-	int	sum;
-	int	i;	
+#ifndef H_RUSH_H
+# define H_RUSH_H
 
-	sum = 0;
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] > 32 && str[i] < 127)
-		{
-			if (str[i + 1] == ' ')
-				sum++;
-			if (str[i + 1] == '\0')
-				return (sum + 1);
-		}
-		i++;
-	}
-	return (sum);
-}
+// Rush-specific
+char	*find_word(char ***cube, int len, int u, int qty);
+struct	s_lang_args
+{
+	char	***cube;
+	char	*nbr;
+	int		len;
+	int		ite;
+	int		qty;
+};
+
+#endif

@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pow.c                                           :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/28 17:43:52 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/28 17:51:15 by elagouch         ###   ########.fr       */
+/*   Created: 2024/09/29 19:45:07 by elagouch          #+#    #+#             */
+/*   Updated: 2024/09/29 19:45:27 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
- * Calculates `nb` to the power of `power`
- *
- * Returns:
- * - The result
- * - If `power` lower than 0, 0.
+ * Copies a string to another string.
  */
-int	ft_pow(int nb, int power)
+char	*ft_strcpy(char *dest, char *src)
 {
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	return (ft_pow(nb, power - 1) * nb);
+	int		i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

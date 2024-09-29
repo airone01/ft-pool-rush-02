@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/29 11:27:12 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 22:55:56 by elagouch         ###   ########.fr       */
+/*   Created: 2024/09/29 17:28:12 by elagouch          #+#    #+#             */
+/*   Updated: 2024/09/29 19:53:44 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "h_main.h"
-
 /*
- * Duplicates a string.
+ * Copies at most `n` characters from a string into another string.
+ * Strings must be initialized and big enough.
  *
- * Returns:
- * - string if everything worked
- * - NULL if malloc failed
-*/
-char	*ft_strdup(char *src)
+ * @param	dest	string to copy to
+ * @param	src		string to copy
+ * @param	n		max number of characters to copy
+ */
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int		i;
-	char	*dest;
+	unsigned int	i;
 
-	dest = malloc(sizeof(char) * (ft_strlen(src) + 1));
-	if (dest == 0)
-		return (0);
 	i = 0;
-	while (src[i] != '\0')
+	while (i < n && src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
 	return (dest);
 }

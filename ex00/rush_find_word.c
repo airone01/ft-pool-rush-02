@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_word.c                                        :+:      :+:    :+:   */
+/*   rush_find_word.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 17:11:51 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 11:35:16 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 23:12:50 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush.h"
+#include "h_main.h"
 
 /*
  * Finds the word in the cube corresponding to the searched number.
- * The cube being the following:
+ *
+ * @param	cube	the "cube" mentionned above
+ * @param	len		length of the cube on th x axis
+ * @param	u		"unit"		(times of `qty`)
+ * @param	qty		"quantity"	(power of thousands)
+ *
+ * @returns	the word corresponding to what we search for
+ * @returns	if not found, `NULL`
+ *
+ * ## The cube
  *
  * `x`: lines
  * `y`: the two strings (left and right) for each line
@@ -33,28 +42,23 @@
  * |/      |/
  * #===y===#
  * ```
- *
- * Args:
- * `cube`:	the "cube" mentionned above
- * `len`:	length of the cube on th x axis
- * `u`:		"unit"		(times of `qty`)
- * `qty`:	"quantity"	(power of thousands)
- *
- * Returns:
- * - the word corresponding to what we search for
- * - if not found, `NULL`
- * - if `ft_itoa` failed, `NULL`
  */
 char	*find_word(char ***cube, int len, int u, int qty)
 {
-	int		to_find;
 	int		i;
 	char	*a_to_find;
+	char	*head;
 
-	to_find = u * ft_pow(1000, qty);
-	a_to_find = ft_itoa(to_find);
-	if (a_to_find == NULL)
-		return (NULL);
+	head = ft_itoa(u);
+	a_to_find = ft_strnew(1 + ft_strlen(head) + (3 * qty));
+	ft_strcat(a_to_find, head);
+	i = 0;
+	while (i < qty)
+	{
+		ft_strcat(a_to_find, "000");
+		i++;
+	}
+	// printf("\na_to_find='%s' for u='%d' and qty='%d'\n", a_to_find, u, qty);
 	i = 0;
 	while (i < len)
 	{

@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   rush_count_words.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
+/*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/28 11:10:24 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 22:54:49 by elagouch         ###   ########.fr       */
+/*   Created: 2024/09/28 14:57:32 by prigaudi          #+#    #+#             */
+/*   Updated: 2024/09/29 23:12:42 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "h_main.h"
-
-/*
- * Puts a string to stdout.
- */
-void	ft_putstr(char *str)
+int	count_words(char *str)
 {
-	write(1, str, ft_strlen(str));
+	int	sum;
+	int	i;	
+
+	sum = 0;
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] > 32 && str[i] < 127)
+		{
+			if (str[i + 1] == ' ')
+				sum++;
+			if (str[i + 1] == '\0')
+				return (sum + 1);
+		}
+		i++;
+	}
+	return (sum);
 }

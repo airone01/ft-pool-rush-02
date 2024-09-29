@@ -6,37 +6,52 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:24:53 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 13:43:02 by prigaudi         ###   ########.fr       */
+/*   Updated: 2024/09/29 23:29:57 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush.h"
+#include "h_main.h"
 
-#include <stdio.h>
+char	***extract_data(char *data_src, int *len)
+{
+    int     file;
+    char    buffer[5000];
+    char    **dico1;
+    char    ***cube;
+    int     i;
+
+    file = open(data_src, O_RDONLY);
+    read(file, buffer, 5000);
+    dico1 = ft_split(buffer, "\n");
+	i = 0;
+    while (dico1[i++])
+	{
+        (*len)++;
+	}
+	cube = malloc(sizeof(char **) * (*len));
+    i = 0;
+    while (dico1[i])
+    {
+        cube[i] = ft_split2(dico1[i],":");
+        i++;
+    }
+    return (cube);
+}
 
 char	***mk_cube(int *len)
 {
 	int		i;
-	// int		j;
 	char	***cube;
 
-	cube = malloc(CUBE_X_LEN * sizeof(char **));
+	cube = malloc(41 * sizeof(char **));
 	if (cube == NULL)
 		return (NULL);
 	i = 0;
-	while (i < CUBE_X_LEN)
+	while (i < 41)
 	{
-		cube[i] = malloc(CUBE_Y_LEN * sizeof(char *));
+		cube[i] = malloc(2 * sizeof(char *));
 		if (cube[i] == NULL)
 			return (NULL);
-		// j = 0;
-		// while (j < CUBE_Y_LEN)
-		// {
-		// 	cube[i][j] = malloc(CUBE_Z_LEN * sizeof(char));
-		// 	if (cube[i][j] == NULL)
-		// 		return (NULL);
-		// 	j++;
-		// }
 		i++;
 	}
 	cube[0][0] = ft_strdup("0");
@@ -134,7 +149,7 @@ void	del_cube(char ***cube, int len)
 	while (i < len)
 	{
 		j = 0;
-		while (j < CUBE_Y_LEN)
+		while (j < 2)
 		{
 			free(cube[i][j]);
 			j++;
@@ -145,38 +160,35 @@ void	del_cube(char ***cube, int len)
 	free(cube);
 }
 
-int	calc_qty(int	nbr)
+int	calc_qty(char *nbr)
 {
-	int	qty;	
+	int	len;
 
-	qty = 0;
-	while (nbr / 1000  >= 1)
-	{
-		nbr = nbr / 1000;
-		qty++;
-	}
-	return (qty);
+	len = (ft_strlen(nbr) - 1) / 3;
+	return  (len);
 }
 
 int	main(int argc, char **argv)
 {
 	int		len;
 	char	***cube;
-	struct lang_args args;
+	struct	s_lang_args args;
 
-	if (argc != 2)
-	{
-		ft_putstr("1 arg pls");
-		return (1);
-	}
 	len = 0;
-	cube = mk_cube(&len);
+	if (argc > 2)
+	{
+		cube = extract_data(argv[1], &len);
+		args.nbr = argv[2];
+	}
+	else
+	{
+		cube = mk_cube(&len);
+		args.nbr = argv[1];
+	}
 	args.cube = cube;
 	args.len = len;
-	args.nbr = ft_atoi(argv[1]);
 	args.ite = 0;
 	args.qty = calc_qty(args.nbr);
 	putnbr_lang(args);
-	del_cube(cube, CUBE_X_LEN);
 	return (0);
 }
