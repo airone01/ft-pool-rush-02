@@ -6,7 +6,7 @@
 /*   By: gaducurt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:41:30 by gaducurt          #+#    #+#             */
-/*   Updated: 2024/09/29 11:34:14 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 20:41:05 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,12 @@ static int	count_size(int n)
  * Basic implementation of itoa.
  * Uses ft_strnew to allocate a new string.
  */
-char		*ft_itoa(int nb)
+char		*ft_itoa(__uint128_t nb)
 {
-	int			count;
-	int			i;
+	__uint128_t	count;
+	__uint128_t	n;
 	char		*dest;
-	long int	n;
+	__uint128_t			i;
 
 	n = nb;
 	count = count_size(n);

@@ -6,7 +6,7 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 11:13:44 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 19:46:19 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 20:42:57 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 #define CUBE_Z_LEN 50
 
 // Strings <-> numbers
-char	*ft_itoa(int nb);
+char	*ft_itoa(__uint128_t nb);
 long	ft_atoi(char *str);
 // STDIN manipulations
 void	ft_putstr(char *str);
@@ -38,7 +38,7 @@ int	ft_strcmp(char *s1, char *s2);
 int	ft_strlen(char *str);
 int	count_words(char *str, char *charset);
 // Numbers manipulation
-int	ft_pow(int nb, int power);
+__uint128_t	ft_pow(int nb, int power);
 // Rush-specific
 char	*find_word(char ***cube, int len, int u, int qty);
 struct lang_args {

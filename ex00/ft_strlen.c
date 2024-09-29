@@ -6,7 +6,7 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 11:10:02 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 10:56:48 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 20:34:41 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 /*
  * Gets the length of a string.
+ *
+ * @param	str	string to get length from
  */
 int	ft_strlen(char *str)
 {

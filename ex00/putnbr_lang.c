@@ -6,7 +6,7 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:13:33 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 20:24:51 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 20:38:39 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@ int	get_3x(struct lang_args args)
 	{
 		diff = nbr_len % 3;
 		free(dest);
-		dest = ft_strnew(nbr_len + diff);
+		dest = ft_strnew(nbr_len + diff + 1);
 		i = 0;
 		while (i < 3 - diff)
 		{
 			dest[i++] = '0';
 		}
-		ft_strlcat(dest, args.nbr, 100);
+		ft_strcat(dest, args.nbr);
 		// printf("\ndest: '%s'\n", dest);
 	}
 	dest2 = ft_strnew(nbr_len + 3);

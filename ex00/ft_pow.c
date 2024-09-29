@@ -6,7 +6,7 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 17:43:52 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/28 17:51:15 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 20:42:49 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  * - The result
  * - If `power` lower than 0, 0.
  */
-int	ft_pow(int nb, int power)
+__uint128_t	ft_pow(int nb, int power)
 {
 	if (power < 0)
 		return (0);

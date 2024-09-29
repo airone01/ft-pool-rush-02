@@ -6,11 +6,13 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 17:11:51 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 11:35:16 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 21:33:47 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush.h"
+
+#include <stdio.h>
 
 /*
  * Finds the word in the cube corresponding to the searched number.
@@ -47,14 +49,20 @@
  */
 char	*find_word(char ***cube, int len, int u, int qty)
 {
-	int		to_find;
 	int		i;
 	char	*a_to_find;
+	char	*head;
 
-	to_find = u * ft_pow(1000, qty);
-	a_to_find = ft_itoa(to_find);
-	if (a_to_find == NULL)
-		return (NULL);
+	head = ft_itoa(u);
+	a_to_find = ft_strnew(1 + ft_strlen(head) + (3 * qty));
+	ft_strcat(a_to_find, head);
+	i = 0;
+	while (i < qty)
+	{
+		ft_strcat(a_to_find, "000");
+		i++;
+	}
+	// printf("\na_to_find='%s' for u='%d' and qty='%d'\n", a_to_find, u, qty);
 	i = 0;
 	while (i < len)
 	{
