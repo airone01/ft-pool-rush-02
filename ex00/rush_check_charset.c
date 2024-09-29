@@ -6,7 +6,7 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 16:14:17 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/09/29 23:12:25 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 23:25:47 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
  */
 int	check_charset(char *str, char *charset, int i)
 {
-    int j;
+	int	j;
 
-    j = 0;
+	j = 0;
     while (charset[j])
     {
         if (charset[j] != str[i + 1])

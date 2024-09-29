@@ -6,7 +6,7 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 22:49:03 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 23:13:05 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 23:31:04 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
  * Puts "special" numbers of a 3x.
  * "special" numbers are the ones between 11 and 19 included.
  */
-void	putnbr_lang_3x_specials(struct lang_args args, int three_x)
+void	putnbr_lang_3x_specials(struct s_lang_args args, int three_x)
 {
 	int	specials;
 
@@ -29,7 +29,7 @@ void	putnbr_lang_3x_specials(struct lang_args args, int three_x)
 /*
  * Puts the `qty` ("thousand", "million", "billion", etc...).
  */
-void	putnbr_lang_3x_qty(struct lang_args args, int three_x)
+void	putnbr_lang_3x_qty(struct s_lang_args args, int three_x)
 {
 	(void) three_x;
 	if (three_x > 0)

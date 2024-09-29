@@ -6,13 +6,13 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:24:53 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 23:01:49 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 23:29:57 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "h_main.h"
 
-char    ***extract_data(char *data_src, int *len)
+char	***extract_data(char *data_src, int *len)
 {
     int     file;
     char    buffer[5000];
@@ -172,7 +172,7 @@ int	main(int argc, char **argv)
 {
 	int		len;
 	char	***cube;
-	struct lang_args args;
+	struct	s_lang_args args;
 
 	len = 0;
 	if (argc > 2)

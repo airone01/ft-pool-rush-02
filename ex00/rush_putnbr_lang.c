@@ -6,13 +6,13 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:13:33 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 23:12:59 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 23:30:24 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "h_main.h"
 
-void	putnbr_lang_3x(struct lang_args args, int three_x);
+void	putnbr_lang_3x(struct s_lang_args args, int three_x);
 
 /*
  * Gets a 3x int number from the full string number.
@@ -25,7 +25,7 @@ void	putnbr_lang_3x(struct lang_args args, int three_x);
  * @param	nbr		the full number to print
  * @param	ite		the current iteration. Starts at 0.
  */
-int	get_3x(struct lang_args args)
+int	get_3x(struct s_lang_args args)
 {
 	char	*dest;
 	char	*dest2;
@@ -63,10 +63,10 @@ int	get_3x(struct lang_args args)
  * @param	nbr		the full number to print
  * @param	ite		the current iteration. Starts at 0.
  */
-void	putnbr_lang(struct lang_args args)
+void	putnbr_lang(struct s_lang_args args)
 {
-	struct lang_args	args_fake;
-	struct lang_args	args_new;
+	struct s_lang_args	args_fake;
+	struct s_lang_args	args_new;
 	int					three_x;
 
 	if (args.qty < 0)
@@ -89,7 +89,7 @@ void	putnbr_lang(struct lang_args args)
 /*
  * Puts a group of three digits ("3x").
  */
-void	putnbr_lang_3x(struct lang_args args, int three_x)
+void	putnbr_lang_3x(struct s_lang_args args, int three_x)
 {
 	putnbr_lang_3x_hundreds(args, three_x);
 	if ((three_x % 100) >= 11 && (three_x % 100) <= 19)

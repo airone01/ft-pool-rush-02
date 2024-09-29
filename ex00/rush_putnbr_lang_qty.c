@@ -6,7 +6,7 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 22:44:50 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 23:13:11 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 23:30:48 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
  * Puts the hundreds of a 3x
  */
-void	putnbr_lang_3x_hundreds(struct lang_args args, int three_x)
+void	putnbr_lang_3x_hundreds(struct s_lang_args args, int three_x)
 {
 	int	hundreds;
 
@@ -31,7 +31,7 @@ void	putnbr_lang_3x_hundreds(struct lang_args args, int three_x)
 /*
  * Puts the tens of a 3x
  */
-void	putnbr_lang_3x_tens(struct lang_args args, int three_x)
+void	putnbr_lang_3x_tens(struct s_lang_args args, int three_x)
 {
 	int	tens;
 
@@ -46,7 +46,7 @@ void	putnbr_lang_3x_tens(struct lang_args args, int three_x)
 /*
  * Puts the units of a 3x
  */
-void	putnbr_lang_3x_units(struct lang_args args, int three_x)
+void	putnbr_lang_3x_units(struct s_lang_args args, int three_x)
 {
 	int	units;
 

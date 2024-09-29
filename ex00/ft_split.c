@@ -6,16 +6,16 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 11:20:27 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/09/29 22:55:33 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 23:24:54 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "h_main.h"
 
-int ft_strlen_sani(char *str)
+int	ft_strlen_sani(char *str)
 {
-    int i;
-    int length;
+    int		i;
+    int		length;
 
     length = 0;
     i = 0;

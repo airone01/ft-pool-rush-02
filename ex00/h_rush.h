@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   h_main.h                                           :+:      :+:    :+:   */
+/*   h_rush.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/28 11:13:44 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 23:26:54 by elagouch         ###   ########.fr       */
+/*   Created: 2024/09/29 23:20:38 by elagouch          #+#    #+#             */
+/*   Updated: 2024/09/29 23:24:14 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef H_MAIN_H
-# define H_MAIN_H
+#ifndef H_RUSH_H
+# define H_RUSH_H
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <fcntl.h>
-
-# include "h_rush.h"
-# include "h_str.h"
-# include "h_putnbr_lang.h"
+// Rush-specific
+char	*find_word(char ***cube, int len, int u, int qty);
+struct	s_lang_args
+{
+	char	***cube;
+	char	*nbr;
+	int		len;
+	int		ite;
+	int		qty;
+};
 
 #endif

@@ -6,12 +6,12 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 22:45:53 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 23:02:13 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 23:28:47 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RUSH_STR_H
-#define RUSH_STR_H
+#ifndef H_STR_H
+#define H_STR_H
 
 // Strings <-> numbers
 char			*ft_itoa(int nb);
