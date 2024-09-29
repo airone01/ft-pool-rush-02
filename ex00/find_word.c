@@ -6,17 +6,24 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 17:11:51 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 21:33:47 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 22:05:02 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush.h"
 
-#include <stdio.h>
-
 /*
  * Finds the word in the cube corresponding to the searched number.
- * The cube being the following:
+ *
+ * @param	cube	the "cube" mentionned above
+ * @param	len		length of the cube on th x axis
+ * @param	u		"unit"		(times of `qty`)
+ * @param	qty		"quantity"	(power of thousands)
+ *
+ * @returns	the word corresponding to what we search for
+ * @returns	if not found, `NULL`
+ *
+ * ## The cube
  *
  * `x`: lines
  * `y`: the two strings (left and right) for each line
@@ -35,17 +42,6 @@
  * |/      |/
  * #===y===#
  * ```
- *
- * Args:
- * `cube`:	the "cube" mentionned above
- * `len`:	length of the cube on th x axis
- * `u`:		"unit"		(times of `qty`)
- * `qty`:	"quantity"	(power of thousands)
- *
- * Returns:
- * - the word corresponding to what we search for
- * - if not found, `NULL`
- * - if `ft_itoa` failed, `NULL`
  */
 char	*find_word(char ***cube, int len, int u, int qty)
 {

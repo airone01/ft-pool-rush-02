@@ -6,13 +6,11 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:13:33 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 21:41:14 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 22:09:05 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush.h"
-
-#include <stdio.h> // ATTENTION
 
 void	putnbr_lang_3x(struct lang_args args, int three_x);
 void	putnbr_lang_3x_hundreds(struct lang_args args, int three_x);
@@ -64,9 +62,7 @@ int	get_3x(struct lang_args args)
 	// free(dest);
 	// printf("dest2: '%s'\n", dest2);
 	// printf("b4 atoi: '%s'\nOG nbr: '%s'\n", dest, args.nbr);
-	int AAAAA = atoi(dest2);
-	// printf("\nATOI SAID: '%d'\n", AAAAA);
-	return (AAAAA);
+	return (atoi(dest2));
 }
 
 /*
@@ -84,7 +80,7 @@ void	putnbr_lang(struct lang_args args)
 	struct lang_args	args_new;
 	int					three_x;
 
-	if (args.qty < 0 || args.nbr < 0)
+	if (args.qty < 0)
 		return ;
 	three_x = get_3x(args);
 	// args_fake.nbr = (args.nbr / ft_pow(1000, args.qty)) % 1000;

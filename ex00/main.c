@@ -6,13 +6,11 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:24:53 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 17:05:25 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 22:08:21 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush.h"
-
-#include <stdio.h>
 
 char	***mk_cube(int *len)
 {
@@ -29,14 +27,6 @@ char	***mk_cube(int *len)
 		cube[i] = malloc(CUBE_Y_LEN * sizeof(char *));
 		if (cube[i] == NULL)
 			return (NULL);
-		// j = 0;
-		// while (j < CUBE_Y_LEN)
-		// {
-		// 	cube[i][j] = malloc(CUBE_Z_LEN * sizeof(char));
-		// 	if (cube[i][j] == NULL)
-		// 		return (NULL);
-		// 	j++;
-		// }
 		i++;
 	}
 	cube[0][0] = ft_strdup("0");
@@ -150,7 +140,6 @@ int	calc_qty(char *nbr)
 	int	len;
 
 	len = (ft_strlen(nbr) - 1) / 3;
-	// printf("len: %d\n", len);
 	return  (len);
 }
 
