@@ -6,7 +6,7 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:13:33 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 11:00:05 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 11:14:36 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,8 @@ void	putnbr_lang_3x_tens(struct lang_args args)
 	tens = (args.nbr / 10) % 10;
 	if (tens <= 0)
 		return ;
-	ft_putstr(" ");
+	if (args.nbr / 100 > 0)
+		ft_putstr(" ");
 	ft_putstr(find_word(args.cube, args.len, tens * 10, 0));
 }
 
