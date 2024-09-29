@@ -6,7 +6,7 @@
 /*   By: gaducurt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:41:30 by gaducurt          #+#    #+#             */
-/*   Updated: 2024/09/29 10:00:44 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 11:34:14 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char		*ft_itoa(int nb)
 	i = 0;
 	if (n < 0 || count == 0)
 		count++;
-	if (!(dest = ft_strnew(count)))
+	if (!(dest = ft_strnew(count + 1)))
 		return (NULL);
 	if (n < 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 11:13:44 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 10:00:34 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 11:28:43 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	ft_putstr(char *str);
 char	**ft_split(char *str, char *charset);
 char	*ft_strjoin(int size, char **strs, char *sep);
 char	*ft_strcat(char *dest, char *src);
+char	*ft_strdup(char *src);
 char	*ft_strnew(int size);
 int	ft_strcmp(char *s1, char *s2);
 int	ft_strlen(char *str);
