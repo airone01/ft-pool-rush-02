@@ -147,7 +147,11 @@ void	del_cube(char ***cube, int len)
 
 int	calc_qty(char *nbr)
 {
-	return ((ft_strlen(nbr) + 1) / 3);
+	int	len;
+
+	len = (ft_strlen(nbr) - 1) / 3;
+	// printf("len: %d\n", len);
+	return  (len);
 }
 
 int	main(int argc, char **argv)
