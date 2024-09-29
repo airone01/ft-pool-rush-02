@@ -6,7 +6,7 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:13:33 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 19:52:49 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 20:20:46 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,18 @@ int	get_3x(struct lang_args args)
 		dest = ft_strnew(nbr_len + diff);
 		i = 0;
 		while (i < 3 - diff)
+		{
 			dest[i++] = '0';
+		}
 		ft_strlcat(dest, args.nbr, 100);
+		// printf("\ndest: '%s'\n", dest);
 	}
 	dest2 = ft_strnew(nbr_len + 3);
-	ft_strncpy(dest2, args.nbr, (args.ite + 1) * 3);
+	ft_strncpy(dest2, dest, (args.ite + 1) * 3);
 	dest2 += args.ite * 3;
 	//
 	// free(dest);
-	// printf("dest: '%s'\n", dest);
+	// printf("dest2: '%s'\n", dest2);
 	// printf("b4 atoi: '%s'\nOG nbr: '%s'\n", dest, args.nbr);
 	int AAAAA = atoi(dest2);
 	// printf("\nATOI SAID: '%d'\n", AAAAA);
@@ -87,7 +90,7 @@ void	putnbr_lang(struct lang_args args)
 	// args_fake.nbr = (args.nbr / ft_pow(1000, args.qty)) % 1000;
 	//		gives us the 3x of the current number compared
 	//		to the qty.
-	// printf("3x: %d\n", three_x);
+	// printf("\n3x: %d\n", three_x);
 	if (args.qty >= 1)
 	{
 		args_fake = args;
@@ -183,7 +186,9 @@ void	putnbr_lang_3x_specials(struct lang_args args, int three_x)
  */
 void	putnbr_lang_3x_qty(struct lang_args args, int three_x)
 {
-	if (three_x == 0 || args.qty <= 0)
+	// printf("\nqty_3x: %d\n", three_x);
+	(void) three_x;
+	if (args.qty <= 0)
 		return;
 	ft_putstr(" ");
 	ft_putstr(find_word(args.cube, args.len, 1, args.qty));
