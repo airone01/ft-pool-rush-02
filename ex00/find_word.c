@@ -6,7 +6,7 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 17:11:51 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 11:16:35 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 11:35:16 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,10 @@ char	*find_word(char ***cube, int len, int u, int qty)
 	while (i < len)
 	{
 		if (ft_strcmp(cube[i][0], a_to_find) == 0)
+		{
+			free(a_to_find);
 			return (cube[i][1]);
+		}
 		i++;
 	}
 	free(a_to_find);
