@@ -6,7 +6,7 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 17:11:51 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/28 18:11:58 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/28 19:28:14 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,32 +23,29 @@
  * `z`: (disregard) the chars for each string
  *
  * ```
- *     #===y===#   
- *    /|      /| 
+ *     #---y---#
+ *    /|      /|
  *   z x     z x
  *  /  |    /  |
  * #===y===#---#
  * |  /    |  /
  * x z     x z
  * |/      |/
- * #---y---#
+ * #===y===#
  * ```
  *
  * Args:
+ * `cube`:	the "cube" mentionned above
+ * `len`:	length of the cube on th x axis
  * `u`:		"unit"		(times of `qty`)
  * `qty`:	"quantity"	(power of thousands)
- *
- * Algorithm:
- * ```c
- * to_find = u * pow(1000, qty);
- * ```
  *
  * Returns:
  * - the word corresponding to what we search for
  * - if not found, `NULL`
  * - if `ft_itoa` failed, `NULL`
  */
-char	*find_word(char ***cube, int u, int qty)
+char	*find_word(char ***cube, int len, int u, int qty)
 {
 	int		to_find;
 	int		i;
@@ -59,9 +56,9 @@ char	*find_word(char ***cube, int u, int qty)
 	if (a_to_find == NULL)
 		return (NULL);
 	i = 0;
-	while (i < CUBE_LEN)
+	while (i < len)
 	{
-		if (str_cmp(cube[i][0], a_to_find) == 0)
+		if (ft_strcmp(cube[i][0], a_to_find) == 0)
 			return (cube[i][1]);
 		i++;
 	}

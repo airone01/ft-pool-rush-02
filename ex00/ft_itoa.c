@@ -6,70 +6,56 @@
 /*   By: gaducurt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:41:30 by gaducurt          #+#    #+#             */
-/*   Updated: 2024/09/28 18:19:58 by gaducurt         ###   ########.fr       */
+/*   Updated: 2024/09/29 10:00:44 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "rush.h"
 
-char	*ft_itoa(int nb, char *key, int i)
+static int	count_size(int n)
 {
-	if (nb < 0)
+	int i;
+
+	i = 0;
+	if (n < 0)
+		n *= -1;
+	while (n != 0)
 	{
-		key[i] = '-';
-		nb = -nb;
+		n /= 10;
 		i++;
 	}
-	if (nb < 9 && nb >= 0)
-	{
-		key[i] = nb - '0';
-		key[i + 1] = '\0';
-	}
-	if (nb > 9)
-	{
-		(ft_itoa((nb / 10), key, i + 1));
-		key[i] = (nb % 10) - '0';
-	}
-	return (key);
+	return (i);
 }
 
-char	*init_str(int nb)
+/*
+ * Basic implementation of itoa.
+ * Uses ft_strnew to allocate a new string.
+ */
+char		*ft_itoa(int nb)
 {
-	char	*key;
-	int	i;
-	int	temp;
-	
-	if (nb < 0)
-	{
-		i = 2;
-		temp = -nb;
-	}
-	else
-	{
-		i = 1;
-		temp = nb;
-	}
-	while (temp > 9)
-	{
-		i++;
-		temp = temp / 10;
-	}
-	key = malloc(i + 1 * sizeof(char));
-	if (!(key))
-		return (0);
-	return (ft_itoa(nb, key, 0));
-}
+	int			count;
+	int			i;
+	char		*dest;
+	long int	n;
 
-int	main()
-{
-	int	nb = -12;
-	int	i = 0;
-	char *key = init_str(nb);
-
-	while (key[i])
+	n = nb;
+	count = count_size(n);
+	i = 0;
+	if (n < 0 || count == 0)
+		count++;
+	if (!(dest = ft_strnew(count)))
+		return (NULL);
+	if (n < 0)
 	{
-		printf("%d", key[i]);
+		n *= -1;
+		dest[0] = '-';
 		i++;
 	}
+	while (count > i)
+	{
+		count--;
+		dest[count] = (n % 10) + '0';
+		n /= 10;
+	}
+	return (dest);
 }
