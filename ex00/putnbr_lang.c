@@ -6,7 +6,7 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 18:13:33 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 20:38:39 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 21:41:14 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,7 +163,7 @@ void	putnbr_lang_3x_units(struct lang_args args, int three_x)
 		return ;
 	if ((three_x / 10) % 10 > 0)
 		ft_putstr("-");
-	else
+	else if (args.ite != 0)
 		ft_putstr(" ");
 	ft_putstr(find_word(args.cube, args.len, units, 0));
 }
@@ -188,10 +188,11 @@ void	putnbr_lang_3x_qty(struct lang_args args, int three_x)
 {
 	// printf("\nqty_3x: %d\n", three_x);
 	(void) three_x;
-	if (args.qty <= 0)
-		return;
-	ft_putstr(" ");
-	ft_putstr(find_word(args.cube, args.len, 1, args.qty));
+	if (three_x > 0)
+	{
+		ft_putstr(" ");
+		ft_putstr(find_word(args.cube, args.len, 1, args.qty));
+	}
 	args.ite++;
 	args.qty--;
 	if (get_3x(args) != 0)

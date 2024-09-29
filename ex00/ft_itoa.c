@@ -6,7 +6,7 @@
 /*   By: gaducurt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:41:30 by gaducurt          #+#    #+#             */
-/*   Updated: 2024/09/29 20:41:05 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 21:40:17 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ char		*ft_itoa(__uint128_t nb)
 {
 	__uint128_t	count;
 	__uint128_t	n;
+	__uint128_t	i;
 	char		*dest;
-	__uint128_t			i;
 
 	n = nb;
 	count = count_size(n);
