@@ -6,12 +6,11 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 11:20:27 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/09/29 22:30:13 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 22:55:33 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush.h"
-#include <stdio.h>
+#include "h_main.h"
 
 int ft_strlen_sani(char *str)
 {

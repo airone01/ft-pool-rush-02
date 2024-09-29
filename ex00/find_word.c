@@ -6,11 +6,11 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 17:11:51 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 22:05:02 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 22:54:04 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush.h"
+#include "h_main.h"
 
 /*
  * Finds the word in the cube corresponding to the searched number.

@@ -6,11 +6,11 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 11:10:02 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 20:34:41 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 22:56:23 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush.h"
+#include "h_main.h"
 
 /*
  * Gets the length of a string.

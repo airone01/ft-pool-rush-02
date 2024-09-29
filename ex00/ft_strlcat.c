@@ -6,11 +6,11 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/29 17:08:09 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 17:52:29 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 22:56:09 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush.h"
+#include "h_main.h"
 
 /*
  * Concatenates strings until the given number of characters.

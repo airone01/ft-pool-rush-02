@@ -6,11 +6,11 @@
 /*   By: gaducurt <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 16:41:30 by gaducurt          #+#    #+#             */
-/*   Updated: 2024/09/29 21:40:17 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 23:03:13 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush.h"
+#include "h_main.h"
 
 static int	count_size(int n)
 {
@@ -31,12 +31,12 @@ static int	count_size(int n)
  * Basic implementation of itoa.
  * Uses ft_strnew to allocate a new string.
  */
-char		*ft_itoa(__uint128_t nb)
+char		*ft_itoa(int nb)
 {
-	__uint128_t	count;
-	__uint128_t	n;
-	__uint128_t	i;
-	char		*dest;
+	char	*dest;
+	int		count;
+	int		n;
+	int		i;
 
 	n = nb;
 	count = count_size(n);

@@ -6,14 +6,11 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:24:53 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 22:34:43 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 23:01:49 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "rush.h"
-#include <unistd.h>
-#include <stdio.h>
-#include <fcntl.h>
+#include "h_main.h"
 
 char    ***extract_data(char *data_src, int *len)
 {
@@ -28,8 +25,9 @@ char    ***extract_data(char *data_src, int *len)
     dico1 = ft_split(buffer, "\n");
 	i = 0;
     while (dico1[i++])
+	{
         (*len)++;
-    printf("length = %d\n", *len);
+	}
 	cube = malloc(sizeof(char **) * (*len));
     i = 0;
     while (dico1[i])
@@ -43,16 +41,15 @@ char    ***extract_data(char *data_src, int *len)
 char	***mk_cube(int *len)
 {
 	int		i;
-	// int		j;
 	char	***cube;
 
-	cube = malloc(CUBE_X_LEN * sizeof(char **));
+	cube = malloc(41 * sizeof(char **));
 	if (cube == NULL)
 		return (NULL);
 	i = 0;
-	while (i < CUBE_X_LEN)
+	while (i < 41)
 	{
-		cube[i] = malloc(CUBE_Y_LEN * sizeof(char *));
+		cube[i] = malloc(2 * sizeof(char *));
 		if (cube[i] == NULL)
 			return (NULL);
 		i++;
@@ -152,7 +149,7 @@ void	del_cube(char ***cube, int len)
 	while (i < len)
 	{
 		j = 0;
-		while (j < CUBE_Y_LEN)
+		while (j < 2)
 		{
 			free(cube[i][j]);
 			j++;
@@ -177,11 +174,6 @@ int	main(int argc, char **argv)
 	char	***cube;
 	struct lang_args args;
 
-	/*if (argc != 2)
-	{
-		ft_putstr("1 arg pls");
-		return (1);
-	}*/
 	len = 0;
 	if (argc > 2)
 	{
@@ -195,10 +187,8 @@ int	main(int argc, char **argv)
 	}
 	args.cube = cube;
 	args.len = len;
-	//args.nbr = ft_atoi(argv[1]);
 	args.ite = 0;
 	args.qty = calc_qty(args.nbr);
 	putnbr_lang(args);
-	//del_cube(cube, CUBE_X_LEN);
 	return (0);
 }
