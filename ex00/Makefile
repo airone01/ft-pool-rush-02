@@ -6,7 +6,7 @@
 #    By: elagouch <elagouch@42>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/28 10:51:47 by elagouch          #+#    #+#              #
-#    Updated: 2024/09/29 21:49:17 by elagouch         ###   ########.fr        #
+#    Updated: 2024/09/29 22:27:43 by elagouch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra -Wpedantic -g3
 SRC = main.c		\
       ft_atoi.c		\
+      ft_check_charset.c	\
       ft_itoa.c		\
       ft_join.c		\
       ft_putstr.c	\

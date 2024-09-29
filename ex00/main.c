@@ -6,11 +6,39 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:24:53 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 22:08:21 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 22:31:58 by elagouch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush.h"
+#include <unistd.h>
+#include <stdio.h>
+#include <fcntl.h>
+
+char    ***extract_data(char *data_src, int *len)
+{
+    int     file;
+    char    buffer[5000];
+    char    **dico1;
+    char    ***cube;
+    int     i;
+
+    file = open(data_src, O_RDONLY);
+    read(file, buffer, 5000);
+    dico1 = ft_split(buffer, "\n");
+	i = 0;
+    while (dico1[i++])
+        (*len)++;
+    printf("length = %d\n", *len);
+	cube = malloc(sizeof(char **) * (*len));
+    i = 0;
+    while (dico1[i])
+    {
+        cube[i] = ft_split2(dico1[i],":");
+        i++;
+    }
+    return (cube);
+}
 
 char	***mk_cube(int *len)
 {
@@ -149,19 +177,28 @@ int	main(int argc, char **argv)
 	char	***cube;
 	struct lang_args args;
 
-	if (argc != 2)
+	/*if (argc != 2)
 	{
 		ft_putstr("1 arg pls");
 		return (1);
-	}
+	}*/
 	len = 0;
-	cube = mk_cube(&len);
+	if (argc > 2)
+	{
+		cube = extract_data(argv[1], &len);
+		args.nbr = ft_atoi(argv[2]);
+	}
+	else
+	{
+		cube = mk_cube(&len);
+		args.nbr = ft_atoi(argv[1]);
+	}
 	args.cube = cube;
 	args.len = len;
-	args.nbr = argv[1];
+	//args.nbr = ft_atoi(argv[1]);
 	args.ite = 0;
 	args.qty = calc_qty(args.nbr);
 	putnbr_lang(args);
-	del_cube(cube, CUBE_X_LEN);
+	//del_cube(cube, CUBE_X_LEN);
 	return (0);
 }
