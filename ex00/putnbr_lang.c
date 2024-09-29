@@ -61,9 +61,6 @@ void	putnbr_lang(struct lang_args args)
  */
 void	putnbr_lang_3x(struct lang_args args)
 {
-	// printf("3x: '%d'\n", args.nbr);
-	//if (args.ite != 0)
-	//	ft_putstr(" and");
 	putnbr_lang_3x_hundreds(args);
 	if ((args.nbr % 100) >= 11 && (args.nbr % 100) <= 19)
 		putnbr_lang_3x_specials(args);
@@ -85,7 +82,8 @@ void	putnbr_lang_3x_hundreds(struct lang_args args)
 	hundreds = args.nbr / 100;
 	if (hundreds <= 0)
 		return ;
-	ft_putstr(" ");
+	if (args.ite != 0)
+		ft_putstr(" ");
 	ft_putstr(find_word(args.cube, args.len, hundreds, 0));
 	ft_putstr(" hundred");
 }
@@ -144,4 +142,5 @@ void	putnbr_lang_3x_qty(struct lang_args args)
 		return;
 	ft_putstr(" ");
 	ft_putstr(find_word(args.cube, args.len, 1, args.qty));
+	ft_putstr(" and");
 }
