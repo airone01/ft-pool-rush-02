@@ -6,13 +6,13 @@
 /*   By: elagouch <elagouch@42>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 20:24:53 by elagouch          #+#    #+#             */
-/*   Updated: 2024/09/29 11:28:18 by elagouch         ###   ########.fr       */
+/*   Updated: 2024/09/29 13:43:02 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush.h"
 
-#include <stdlib.h>
+#include <stdio.h>
 
 char	***mk_cube(int *len)
 {
@@ -145,6 +145,19 @@ void	del_cube(char ***cube, int len)
 	free(cube);
 }
 
+int	calc_qty(int	nbr)
+{
+	int	qty;	
+
+	qty = 0;
+	while (nbr / 1000  >= 1)
+	{
+		nbr = nbr / 1000;
+		qty++;
+	}
+	return (qty);
+}
+
 int	main(int argc, char **argv)
 {
 	int		len;
@@ -162,7 +175,7 @@ int	main(int argc, char **argv)
 	args.len = len;
 	args.nbr = ft_atoi(argv[1]);
 	args.ite = 0;
-	args.qty = 0;
+	args.qty = calc_qty(args.nbr);
 	putnbr_lang(args);
 	del_cube(cube, CUBE_X_LEN);
 	return (0);
